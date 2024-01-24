@@ -1,7 +1,12 @@
 {
   "name": "@types/cruddy",
   "version": "1.0.0",
+  "type": "module",
   "description": "Typescript types for front end integration with REST APIs produced by https://github.com/mdconaway/fastapi-cruddy-framework",
   "license": "MIT",
-  "main": "index.ts"
+  "author": "Sam Mason",
+  "main": "index.ts",
+  "devDependencies": {
+    "typescript": "5.3.3"
+  }
 }
