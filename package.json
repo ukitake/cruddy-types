@@ -1,46 +1,6 @@
 {
-  "name": "vite-typescript-npm-package",
+  "name": "@types/cruddy",
   "version": "1.0.0",
-  "description": "Vite TypeScript library npm package template",
-  "license": "ISC",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "tsc && vite build --watch",
-    "start": "vite --host --open",
-    "build": "tsc && vite build",
-    "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
-    "lint:scripts": "eslint . --ext .ts",
-    "lint:styles": "stylelint ./**/*.{css,scss}",
-    "format:scripts": "prettier . --write",
-    "format:styles": "stylelint ./**/*.{css,scss} --fix"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "@typescript-eslint/eslint-plugin": "^6.18.0",
-    "@typescript-eslint/parser": "^6.18.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "dts-bundle-generator": "^9.2.1",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "prettier": "^3.1.1",
-    "stylelint": "^16.1.0",
-    "stylelint-config-recommended": "^14.0.0",
-    "stylelint-config-sass-guidelines": "^11.0.0",
-    "ts-node": "^10.9.2",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11",
-    "vite-plugin-dts": "^3.7.0"
-  }
+  "description": "Typescript types for front end integration with REST APIs produced by https://github.com/mdconaway/fastapi-cruddy-framework",
+  "license": "MIT"
 }
