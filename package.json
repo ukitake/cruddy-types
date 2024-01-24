@@ -2,5 +2,6 @@
   "name": "@types/cruddy",
   "version": "1.0.0",
   "description": "Typescript types for front end integration with REST APIs produced by https://github.com/mdconaway/fastapi-cruddy-framework",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.ts"
 }
