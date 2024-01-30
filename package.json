@@ -6,7 +6,23 @@
   "license": "MIT",
   "author": "Sam Mason",
   "main": "index.ts",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "prettier": "prettier --check ."
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
     "typescript": "5.3.3"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true
   }
 }
