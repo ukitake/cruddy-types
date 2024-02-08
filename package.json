@@ -18,6 +18,9 @@
     "prettier": "^3.2.5",
     "typescript": "5.3.3"
   },
+  "files": [
+    "index.ts"
+  ],
   "prettier": {
     "trailingComma": "none",
     "tabWidth": 2,
