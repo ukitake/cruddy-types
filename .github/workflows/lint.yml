@@ -1,0 +1,22 @@
+name: Run Checks
+
+on: push
+
+jobs:
+  lint:
+    strategy:
+      matrix:
+        node-version: ['18.x', '20.x']
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Run prettier
+        run: npm run prettier
+      - name: Run eslint
+        run: npm run lint
