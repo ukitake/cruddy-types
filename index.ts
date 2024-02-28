@@ -49,10 +49,15 @@ type SqlOp<S extends SqlOps> = {
 
 export type Logic = OneOf<[SqlOp<'*in_'>, SqlOp<'*eq'>, SqlOp<'*neq'>, SqlOp<'*contains'>, SqlOp<'*icontains'>]>;
 
+// (SM) make an type where all keys of T with '.${any string}'following them are valid keys
+type Dots<T> = {
+  [K in keyof T & string as `${K}.${string}`]: T[K]
+};
+
 export type Clause<TModel> = {
-  [key in keyof TModel]: Record<key, Logic> & Partial<Record<Exclude<keyof TModel, key>, never>> extends infer O
+  [key in keyof (TModel & Dots<TModel>)]: Record<key, Logic> & Partial<Record<Exclude<keyof TModel, key>, never>> extends infer O
     ? Expand<O>
     : never;
-}[keyof TModel];
+}[keyof (TModel & Dots<TModel>)];
 
 export type Where<TModel> = LogicalGrouping<TModel> | Clause<TModel>;
