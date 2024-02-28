@@ -49,7 +49,7 @@ type SqlOp<S extends SqlOps> = {
 
 export type Logic = OneOf<[SqlOp<'*in_'>, SqlOp<'*eq'>, SqlOp<'*neq'>, SqlOp<'*contains'>, SqlOp<'*icontains'>]>;
 
-// (SM) make an type where all keys of T with '.${any string}'following them are valid keys
+// (SM) make a type where all keys of T with '.${any string}'following them are valid keys
 type Dots<T> = {
   [K in keyof T & string as `${K}.${string}`]: T[K]
 };
