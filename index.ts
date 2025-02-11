@@ -13,13 +13,12 @@ const SQL_OPS = [
   '*contained_by',
   '*has_key',
   '*has_all',
+  '*has_any',
   '*intersects',
   '*intersects_nd',
   '*same',
   '*above',
   '*below',
-  '*datetime',
-  '*datetime_naive',
   '*startswith',
   '*endswith'
 ] as const;
@@ -63,7 +62,7 @@ type NotGrouping<TModel> = {
 
 export type LogicalGrouping<TModel> = OneOf<[AndGrouping<TModel>, OrGrouping<TModel>, NotGrouping<TModel>]>;
 
-type Value = string | number | boolean | null;
+type Value = string | number | boolean | { '*datetime': string } | { '*datetime_naive': string } | null;
 
 type SqlOps = (typeof SQL_OPS)[number];
 
@@ -86,14 +85,13 @@ export type Logic = OneOf<
     SqlOp<'*like'>,
     SqlOp<'*contained_by'>,
     SqlOp<'*has_key'>,
+    SqlOp<'*has_any'>,
     SqlOp<'*has_all'>,
     SqlOp<'*intersects'>,
     SqlOp<'*intersects_nd'>,
     SqlOp<'*same'>,
     SqlOp<'*above'>,
     SqlOp<'*below'>,
-    SqlOp<'*datetime'>,
-    SqlOp<'*datetime_naive'>,
     SqlOp<'*startswith'>,
     SqlOp<'*endswith'>
   ]
