@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "lib": ["es6"],
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types",
+    "strict": true,
     "types": [],
-    "noEmit": true,
     "forceConsistentCasingInFileNames": true
   },
   "files": ["index.ts"]

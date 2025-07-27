@@ -1,28 +1,3 @@
-const SQL_OPS = [
-  '*in_',
-  '*eq',
-  '*neq',
-  '*contains',
-  '*icontains',
-  '*websearch_to_tsquery',
-  '*gt',
-  '*gte',
-  '*lt',
-  '*lte',
-  '*like',
-  '*contained_by',
-  '*has_key',
-  '*has_all',
-  '*has_any',
-  '*intersects',
-  '*intersects_nd',
-  '*same',
-  '*above',
-  '*below',
-  '*startswith',
-  '*endswith'
-] as const;
-
 // request params
 export type BaseAuthRequestParams = {
   auth_token?: string;
@@ -64,7 +39,29 @@ export type LogicalGrouping<TModel> = OneOf<[AndGrouping<TModel>, OrGrouping<TMo
 
 type Value = string | number | boolean | { '*datetime': string } | { '*datetime_naive': string } | null;
 
-type SqlOps = (typeof SQL_OPS)[number];
+type SqlOps =
+  | '*in_'
+  | '*eq'
+  | '*neq'
+  | '*contains'
+  | '*icontains'
+  | '*websearch_to_tsquery'
+  | '*gt'
+  | '*gte'
+  | '*lt'
+  | '*lte'
+  | '*like'
+  | '*contained_by'
+  | '*has_key'
+  | '*has_all'
+  | '*has_any'
+  | '*intersects'
+  | '*intersects_nd'
+  | '*same'
+  | '*above'
+  | '*below'
+  | '*startswith'
+  | '*endswith';
 
 type SqlOp<S extends SqlOps> = {
   [key in Exclude<SqlOps, Exclude<SqlOps, S>>]: Value | Value[];
